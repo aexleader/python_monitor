@@ -73,7 +73,7 @@ def monitor_d(name,url):
     try:
         urldata=urllib2.urlopen(url,timeout=5).read()
         urljson=json.loads(urldata)
-        minvalue=min(int(urldict["count"]) for urldict in urljson)#所有的count中值最小的不为0，时间为当天
+        minvalue=min(int(urldict["count"]) for urldict in urljson)#所有的count中值最小的不为0
         global time1
         time1=time.strftime("%Y-%m-%d %H:%M %p",time.localtime())
         if(minvalue>0):
